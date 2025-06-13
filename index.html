@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva de Hardware de PC (Móvil)</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Fuentes Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Fondo */
+            background-image: url('https://digileaders.com/wp-content/uploads/2017/09/printed-circuit-board-24-e1505469423692.jpg');
+            background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+        }
+        /* Estilos personalizados para las tarjetas de los componentes */
+        .hardware-part {
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            border-radius: 1.25rem; /* rounded-xl */
+            border: 2px solid transparent; /* Para el efecto de borde en active */
+        }
+        .hardware-part:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.2), 0 5px 10px -5px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+            background-color: rgba(224, 231, 255, 0.9); /* indigo-100 con opacidad en hover */
+        }
+        .hardware-part.active {
+            transform: translateY(-4px);
+            border: 3px solid #4f46e5; /* indigo-600 */
+            box-shadow: 0 25px 40px -8px rgba(0, 0, 0, 0.25), 0 15px 20px -8px rgba(0, 0, 0, 0.1); /* Sombra más fuerte */
+            background-color: rgba(199, 210, 254, 0.9); /* indigo-200 con opacidad para active */
+        }
+    </style>
+    <!-- Importar fuente Dancing Script de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <!-- Fuentes Dancing Script -->
+    <style>.creador {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1rem;
+    color: #7c3aed;
+    font-weight: bold;
+    padding: 0.2em 0.5em;
+    border-radius: 0.5em;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;}
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-4">
+    <span class="creador absolute left-15 top-2.5 z-50">By: Santi</span>
+    <div class="bg-white bg-opacity-80 rounded-3xl shadow-2xl p-4 md:p-10 max-w-4xl w-full flex flex-col gap-8">
+        <!-- Sección de Componentes de PC -->
+        <div class="w-full flex flex-col items-center">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-700">
+                Explora el Hardware de tu PC!!!!
+            </h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10 w-full">
+                <!-- Tarjeta de Placa Base -->
+                <div class="hardware-part bg-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center" data-part="motherboard">
+                    <img src="https://wallpapers.com/images/hd/high-end-gaming-motherboard-r-o-g-series-8iimqojmib52swwf.png" alt="Placa Base" class="w-28 h-28 mb-3 object-contain rounded-md">
+                    <span class="text-base font-semibold text-gray-800">Placa Base</span>
+                </div>
+                <!-- Tarjeta de Procesador (CPU) -->
+                <div class="hardware-part bg-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center" data-part="cpu">
+                    <img src="https://wallpapers.com/images/high/a-m-d-ryzen-c-p-uand-heatspreader-a491q4vurvgyo5dg.png" alt="CPU" class="w-28 h-28 mb-3 object-contain rounded-md">
+                    <span class="text-base font-semibold text-gray-800">Procesador (CPU)</span>
+                </div>
+                <!-- Tarjeta de Tarjeta Gráfica (GPU) -->
+                <div class="hardware-part bg-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center" data-part="gpu">
+                    <img src="https://images.frandroid.com/wp-content/uploads/2022/09/nvidia-geforce-rtx-4090-frandroid-2022.png" alt="GPU" class="w-28 h-28 mb-3 object-contain rounded-md">
+                    <span class="text-base font-semibold text-gray-800">Tarjeta Gráfica (GPU)</span>
+                </div>
+                <!-- Tarjeta de Memoria RAM -->
+                <div class="hardware-part bg-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center" data-part="ram">
+                    <img src="https://www.pngall.com/wp-content/uploads/5/RAM-PNG-Pic.png" alt="RAM" class="w-28 h-28 mb-3 object-contain rounded-md">
+                    <span class="text-base font-semibold text-gray-800">Memoria RAM</span>
+                </div>
+                <!-- Tarjeta de Almacenamiento -->
+                <div class="hardware-part bg-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center" data-part="storage">
+                    <img src="https://png.pngtree.com/png-clipart/20230627/original/pngtree-ssd-hdd-nvme-computer-storage-drive-vector-png-image_9230662.png" alt="Almacenamiento" class="w-28 h-28 mb-3 object-contain rounded-md">
+                    <span class="text-base font-semibold text-gray-800">Almacenamiento</span>
+                </div>
+                <!-- Tarjeta de Fuente de Alimentación -->
+                <div class="hardware-part bg-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center" data-part="psu">
+                    <img src="https://clipground.com/images/psu-png-2.png" alt="Fuente de Alimentación" class="w-28 h-28 mb-3 object-contain rounded-md">
+                    <span class="text-base font-semibold text-gray-800">Fuente de Alimentación (PSU)</span>
+                </div>
+                <!-- Tarjeta de Sistema de Refrigeración -->
+                <div class="hardware-part bg-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center" data-part="cooling">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/CPU_cooling_fan.jpg/320px-CPU_cooling_fan.jpg" alt="Sistema de Refrigeración" class="w-28 h-28 mb-3 object-contain rounded-md">
+                    <span class="text-base font-semibold text-gray-800">Sistema de Refrigeración</span>
+                </div>
+                <!-- Tarjeta de Gabinete -->
+                <div class="hardware-part bg-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center" data-part="case">
+                    <img src="https://th.bing.com/th/id/OIP.w5HMZjOX9K-w4rLJz0h9LwHaKS?w=146&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Gabinete" class="w-28 h-28 mb-3 object-contain rounded-md">
+                    <span class="text-base font-semibold text-gray-800">Gabinete</span>
+                </div>
+                <!-- Espacio para el último componente -->
+                <div class="hardware-part bg-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center" data-part="extra">
+                    <img src="https://th.bing.com/th/id/OIP.1b0j2d9gk3a5c7f8e6s4WQHaHa?w=146&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7" alt="Componente Extra" class="w-28 h-28 mb-3 object-contain rounded-md">
+                    <span class="text-base font-semibold text-gray-800">Componente Extra</span>
+                    
+            </div>
+        </div>
+
+        <!-- Sección de Descripción -->
+        <div id="description-section" class="w-full bg-white bg-opacity-90 p-8 rounded-xl shadow-inner flex flex-col min-h-[300px]">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                Información Detallada
+            </h2>
+            <div id="description-area" class="flex-grow text-gray-700 leading-relaxed text-lg">
+                <p>Haz clic en cualquiera de los componentes de la PC para ver una descripción detallada de su función y propósito.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Objeto que contiene las descripciones de cada parte del hardware
+        const hardwareDescriptions = {
+            motherboard: {
+                title: "Placa Base (Tarjeta Madre)",
+                description: "La placa base es el componente principal que actúa como el sistema nervioso central de la computadora. Su función es interconectar todos los demás componentes del hardware, incluyendo el procesador (CPU), la memoria RAM, las tarjetas de expansión (como la tarjeta gráfica) y los dispositivos de almacenamiento. Contiene el chipset, que gestiona el flujo de datos entre los componentes, y la BIOS/UEFI, que es el firmware encargado de iniciar el hardware y cargar el sistema operativo. Las ranuras de expansión (PCIe, DIMM) permiten añadir o actualizar componentes, y los puertos (USB, Ethernet, audio) facilitan la conectividad externa."
+            },
+            cpu: {
+                title: "Procesador (CPU - Unidad Central de Procesamiento)",
+                description: "La CPU es el 'cerebro' de la computadora, responsable de ejecutar las instrucciones de los programas y realizar todas las operaciones de cálculo. Se compone de una o más unidades de procesamiento llamadas 'núcleos' que pueden manejar tareas simultáneamente, y 'hilos' lógicos que mejoran el rendimiento. La velocidad del procesador se mide en gigahercios (GHz), indicando cuántos ciclos de instrucción puede realizar por segundo. Además, incorpora una memoria caché (L1, L2, L3) para almacenar datos de acceso frecuente, lo que acelera significativamente el rendimiento al reducir el tiempo de acceso a la RAM."
+            },
+            gpu: {
+                title: "Tarjeta Gráfica (GPU - Unidad de Procesamiento Gráfico)",
+                description: "La GPU es un procesador especializado en la manipulación y renderizado de gráficos y video. A diferencia de la CPU, la GPU está optimizada para realizar miles de cálculos simples en paralelo, lo que la hace excepcionalmente eficiente para tareas gráficas intensivas como videojuegos 3D, edición de video, diseño CAD y renderizado. También es fundamental en el campo de la computación de alto rendimiento y la inteligencia artificial, donde su capacidad de procesamiento paralelo es utilizada para entrenar redes neuronales y realizar cálculos complejos de manera eficiente. La memoria VRAM dedicada en la tarjeta gráfica almacena los datos de imagen para un acceso rápido."
+            },
+            ram: {
+                title: "Memoria RAM (Memoria de Acceso Aleatorio)",
+                description: "La RAM es la memoria volátil de alta velocidad que la computadora utiliza para almacenar temporalmente los datos y programas que se están utilizando activamente. Es 'volátil' porque su contenido se borra cuando la computadora se apaga. Su función es proporcionar un acceso rápido a la CPU a la información necesaria para las tareas en curso, ya que acceder al almacenamiento permanente (SSD/HDD) sería mucho más lento. Cuanta más RAM tenga un sistema, más aplicaciones podrá tener abiertas simultáneamente y más grandes serán los conjuntos de datos con los que podrá trabajar de manera fluida, evitando la ralentización debido al uso excesivo del archivo de paginación del disco duro."
+            },
+            storage: {
+                title: "Almacenamiento (SSD / HDD)",
+                description: "El almacenamiento es el medio donde se guardan los datos de forma permanente en una computadora. Existen dos tipos principales: los Discos Duros (HDD) y las Unidades de Estado Sólido (SSD). Los HDD son dispositivos mecánicos que utilizan platos giratorios magnéticos para almacenar datos; son económicos y ofrecen grandes capacidades, pero son más lentos y sensibles a golpes. Los SSD, por otro lado, utilizan memoria flash para almacenar datos; son significativamente más rápidos (especialmente los NVMe que se conectan directamente a la placa base), más duraderos, eficientes energéticamente y no tienen partes móviles, lo que los hace ideales para el sistema operativo, aplicaciones y juegos."
+            },
+            psu: {
+                title: "Fuente de Alimentación (PSU)",
+                description: "La Fuente de Alimentación es un componente vital que convierte la corriente alterna (AC) de la toma de corriente en corriente continua (DC) de los voltajes específicos requeridos por cada componente interno de la PC (como 12V para la CPU/GPU, 5V para el disco duro, etc.). Una PSU eficiente asegura un suministro de energía estable y limpio, lo cual es crucial para la longevidad y el correcto funcionamiento de todos los demás componentes. La potencia de una PSU se mide en vatios (W), y es importante que tenga suficiente capacidad para alimentar todos los componentes del sistema, especialmente la tarjeta gráfica y el procesador que son los mayores consumidores de energía."
+            },
+            cooling: {
+                title: "Sistema de Refrigeración",
+                description: "El sistema de refrigeración es fundamental para disipar el calor generado por componentes de alto rendimiento como la CPU y la GPU, que pueden alcanzar temperaturas muy elevadas durante el uso intensivo. Un enfriamiento inadecuado puede provocar el 'thermal throttling' (reducción del rendimiento para evitar el sobrecalentamiento) o incluso daños permanentes. Los métodos de refrigeración incluyen disipadores de calor (compuestos por una base de metal y aletas), ventiladores que fuerzan el flujo de aire, y sistemas de refrigeración líquida (All-in-One o personalizados) que utilizan líquidos para transferir el calor a un radiador y luego disiparlo con ventiladores. Un buen sistema de refrigeración asegura la estabilidad, el rendimiento óptimo y la vida útil de los componentes."
+            },
+            case: {
+                title: "Gabinete (Chasis / Carcasa)",
+                description: "El gabinete de la computadora es la estructura que alberga y protege todos los componentes internos del PC. Más allá de su función protectora contra el polvo, los golpes y la humedad, el diseño del gabinete es crucial para la gestión del flujo de aire y, por ende, para la eficiencia de la refrigeración. Incluye bahías para unidades de almacenamiento, ranuras para tarjetas de expansión y orificios para el montaje de la placa base y la fuente de alimentación. Además, juega un papel importante en la estética del equipo y en la organización del cableado interno, lo que también contribuye a un mejor flujo de aire."
+            },
+            extra: {
+                title: "Componente Extra",
+                description: "Este espacio está reservado para cualquier componente adicional que puedas tener en tu PC, como tarjetas de sonido, tarjetas de red, o incluso dispositivos de captura de video. Estos componentes pueden mejorar la funcionalidad de tu sistema, permitiendo tareas específicas como la grabación de audio de alta calidad, la conexión a redes inalámbricas, o la captura y transmisión de video en tiempo real. La elección de estos componentes depende de tus necesidades particulares y del tipo de tareas que planeas realizar con tu computadora."
+            }
+        };
+
+        const hardwareParts = document.querySelectorAll('.hardware-part');
+        const descriptionArea = document.getElementById('description-area');
+        const descriptionSection = document.getElementById('description-section'); // La sección a la que queremos hacer scroll
+
+        // Función para mostrar la descripción y hacer scroll
+        function showDescriptionAndScroll(partKey) {
+            const partInfo = hardwareDescriptions[partKey];
+            if (partInfo) {
+                descriptionArea.innerHTML = `
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 text-center">${partInfo.title}</h3>
+                    <p>${partInfo.description}</p>
+                `;
+                // Hacer scroll a la sección de descripción
+                descriptionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                descriptionArea.innerHTML = `
+                    <p class="text-red-500">Descripción no encontrada para este componente.</p>
+                `;
+            }
+        }
+
+        // Añadir event listeners a cada parte del hardware
+        hardwareParts.forEach(part => {
+            part.addEventListener('click', () => {
+                // Remover clase 'active' de todos los elementos
+                hardwareParts.forEach(p => p.classList.remove('active'));
+
+                // Añadir clase 'active' al elemento clickeado
+                part.classList.add('active');
+
+                const partKey = part.dataset.part;
+                showDescriptionAndScroll(partKey);
+            });
+        });
+    </script>
+</body>
+</html>
